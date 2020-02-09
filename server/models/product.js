@@ -1,12 +1,14 @@
-class ProductModel {
+const mongoose = require("mongoose")
 
-    constructor(id, name, price, stock) {
-        this.id = id;
-        this.name = name;
-        this.price = price;
-        this.stock = stock;
-    }
+//create Schema of a product: מה יש במוצר
+const ProductSchema = mongoose.Schema({
+    name: String,
+    price: Number,
+    stock: Number
+}, {
+    versionKey: false // לא להוסיף פרמטר נוסף עבור גרסה
+})
 
-}
+const Product = mongoose.model("Product", ProductSchema, "products") // MODELNAME,SCHEMA,COLLECTION
 
-module.exports = ProductModel;
+module.exports = Product;

@@ -7,4 +7,4 @@ server.use(cors());
 server.use(express.json());
 server.use("/api/products", productsController);
 
-server.listen(5000, () => console.log("Listening on http://localhost:5000"));
+server.listen(7000, () => console.log("Listening on http://localhost:7000"));
